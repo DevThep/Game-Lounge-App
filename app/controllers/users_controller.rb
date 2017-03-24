@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   # user_path(user)
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.paginate(page: params[:page])
   end
 
   # GET /users/new
@@ -67,15 +68,6 @@ class UsersController < ApplicationController
 
     def user_params_with_desc
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :description)
-    end
-
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
     end
 
     #Confirms the correct user.
