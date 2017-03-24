@@ -9,7 +9,28 @@
   box-sizing:         border-box;
 }
 
+@font-face {
+  font-family: 'Super Mario Bros.';
+  font-style: normal;
+  font-weight: normal;
+  src: font-url('Super-Mario-Bros.woff') format('woff');
+}
+
 /* miscellaneous */
+.jumbotron {
+  margin-bottom: 0px;
+  height: 550px;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  background: url('mario-wall.png');
+  background-size: 1540px 550px;
+  background-repeat: no-repeat;
+  h1 {
+    margin-top: -10px;
+    font-family: 'Super Mario Bros.';
+    color: #21ce3d;
+  }
+}
 
 .debug_dump {
   clear: both;
@@ -43,7 +64,15 @@ textarea {
 }
 
 .register {
-	margin-top: 30px;
+	margin-top: 5px;
+  background-color: #b21515;
+  text-shadow: none;
+  color: #fff;
+  &:hover {
+    background-color: #cc4f4f;
+    text-decoration: none;
+    color: #fff;
+  }
 }
 
 .appnav {
@@ -69,7 +98,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #777;
+  color: #fff;
 }
 
 p {
@@ -101,9 +130,10 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
-  position:absolute;
+  position:fixed;
   bottom:0;
   width:100%;
+  background-color: #fff;
   a {
 	color: #555;
 	&:hover {
@@ -202,5 +232,17 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* Users index */
+
+.users {
+  /*list-style: none;*/
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 2px solid #4286f4;
+  }
 }
 
