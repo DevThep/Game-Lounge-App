@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :post_not_found
 
   def post_not_found
-    flash[:info] = "Couldn't find post."
+    flash[:info] = "Post not found!"
     redirect_to root_url
   end
   
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     flash[:success] = "Post deleted"
-    redirect_to request.referrer || root_url
+    redirect_to root_url
   end
 
   private
