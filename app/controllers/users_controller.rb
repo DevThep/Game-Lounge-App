@@ -3,6 +3,13 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :user_not_found
+
+  def user_not_found
+    flash[:info] = "User does not exist."
+    redirect_to root_url
+  end
+
   # GET /users
   # users_path
   def index

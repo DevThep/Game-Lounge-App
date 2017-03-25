@@ -1,6 +1,18 @@
 class PostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
+  rescue_from ActiveRecord::RecordNotFound, :with => :post_not_found
+
+  def post_not_found
+    flash[:info] = "Couldn't find post."
+    redirect_to root_url
+  end
+  
+  def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments
+    @comment = Comment.new
+  end
 
   def create
   	@post = current_user.posts.build(post_params)

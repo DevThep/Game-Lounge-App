@@ -45,6 +45,7 @@
 
 body {
   padding-top: 120px;
+  background-color: #e0fcf6;
 }
 
 section {
@@ -234,6 +235,24 @@ input {
   margin-left: 0;
 }
 
+.user_info {
+  background-color: #c0cbdb;
+  border-radius: 10px;
+  padding: 20px;
+  h1 {
+    padding-top: 10px;
+  }
+  h1.name {
+    padding-top: 25px;
+    font-size: 27px;
+  }
+  a {
+    .gravatar {
+      padding-top: 12px; 
+    }
+  }
+}
+
 /* Users index */
 
 .users {
@@ -291,5 +310,76 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+#postpg {
+  list-style: none;
+  padding: 15px;
+  background-color: #c0cbdb;
+  border-radius: 10px;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #4286f4;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+#postcomment {
+  list-style: none;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #f2dbba;
+  border-radius: 10px;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #4286f4;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+.pic {
+  padding-top: 5px;
 }
 

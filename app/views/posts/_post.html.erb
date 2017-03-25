@@ -8,6 +8,8 @@
     <% if current_user?(post.user) %>
       <%= link_to "delete", post, method: :delete,
                                        data: { confirm: "You sure?" } %>
+                                      
     <% end %>
+    | <%= link_to "comments", post %> 
   </span>
 </li>
