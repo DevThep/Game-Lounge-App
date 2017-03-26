@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Game Lounge App
+Phornthep Sachdev (5680836) & Arun Bhusri (5680607)
 
-Things you may want to cover:
+### Models
+User, Post, Comment, Game, Topic & Relationship
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
