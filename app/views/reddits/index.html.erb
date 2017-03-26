@@ -1,0 +1,31 @@
+<div id="reddit-content">
+</div>
+
+<script>
+	    var splitByLastDot = function(text) {
+    	var index = text.lastIndexOf('.');
+    	return [text.slice(0, index), text.slice(index + 1)]
+	  }
+      $.getJSON(
+        "http://www.reddit.com/r/gaming/hot.json?count=30",
+        function foo(data)
+        {
+          $.each(
+            data.data.children.slice(0, 30),
+            function (i, post) {
+              $("#reddit-content").append( '<br>' + post.data.title );
+              var URL = post.data.url
+              if (URL.includes("imgur")){
+              	var data = splitByLastDot(URL)
+              	console.log(data)
+              	$("#reddit-content").append( '<br><img src="' + data[0] +"m."+ data[1] +'" height="300" width="300">');
+              }else{
+              	$("#reddit-content").append( '<br><img src="' + post.data.url +'" height="300" width="300">');
+              }
+              $("#reddit-content").append( '<br><a href="https://www.reddit.com' + post.data.permalink + '" target="_blank" >' + 'Go to reddit page<a>');
+              $("#reddit-content").append( '<hr>' );
+            }
+          )
+        }
+      )
+</script>

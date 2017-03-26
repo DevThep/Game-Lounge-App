@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reddits/index'
+
   get 'games/new'
 
   get 'games/show'
@@ -23,4 +25,5 @@ Rails.application.routes.draw do
   end
   resources :relationships,       only: [:create, :destroy]
   resources :games
+  resources :reddits, only: [:index]
 end
