@@ -421,3 +421,21 @@ span.picture {
   padding-top: 5px;
 }
 
+/* games */
+.game {
+  border-top: 3px solid #4286f4;
+  border-bottom: 3px solid #4286f4;
+}
+.game p label{
+    width: 400px;
+    padding: 20px;
+    overflow: hidden;
+    float: left;
+}
+
+.game img {
+    margin-right: 15px;
+    float: left;
+}
+
+

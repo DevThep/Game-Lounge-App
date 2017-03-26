@@ -1,0 +1,32 @@
+<div class="row game">
+  <div class="col-md-3">
+  	<%= image_tag game.picture.url if game.picture? %>
+  </div>
+  <div class="col-md-6">
+  	<div class="row">
+  		<h3 class="gname"><%= link_to game.name, game %></h3>
+  	</div>
+  	<hr>
+  	<div class="row">
+  		<label>Publisher</label>
+  		 <p class="publisher"><%= game.publisher %></p>
+  	</div>
+  	<hr>
+  	<div class="row">
+  		<label>Description</label>
+  		<p class="desc"><%= game.description %></p>
+  	</div>
+  	<hr>
+  	<div class="row">
+  		<p class="timestamp">
+	    Posted <%= time_ago_in_words(game.created_at) %> ago.
+	    <% if current_user.admin? %>
+	      <%= link_to "delete", game, method: :delete,
+	                                       data: { confirm: "You sure?" } %>
+	                                      
+	    <% end %> 
+	  	</p>
+  	</div>
+  </div>
+	  
+</div>
