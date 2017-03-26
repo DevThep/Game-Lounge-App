@@ -16,6 +16,8 @@ class GamesController < ApplicationController
   # game_path(game)
   def show
   	@game = Game.find(params[:id])
+    @topic = @game.topics.build
+    @topics = @game.topics
   end
 
   # POST /games

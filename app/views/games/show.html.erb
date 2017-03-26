@@ -4,5 +4,17 @@
 <ul class="game">
     <%= render @game %>
 </ul>
+<%= form_for(@topic, url: game_topics_path(@game.id)) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <%= f.hidden_field :game_id, :value => @game.id %>
+  <%= f.text_area :name, placeholder: "Add new topic", row: 2 %>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
 <br>
+
 <h3>Discussion</h3>
+<ul class="topics">
+	<% @topics.each do |topic| %>
+		<h3> <%= topic.name %> </h3>	
+	<% end %>
+</ul>

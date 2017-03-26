@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+	has_many :topics, dependent: :destroy
 	validates :name, presence: true, length: { maximum: 155 }
 	validates :publisher, presence: true, length: { maximum: 155 }
 	validates :description, presence: true, length: { maximum: 512 }
