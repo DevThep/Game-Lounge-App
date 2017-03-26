@@ -11,6 +11,13 @@
     <section class="stats">
       <%= render 'shared/stats' %>
     </section>
+    <% if !@user.description.nil? %>
+      <section class="description">
+        <label>About Me</label>
+        <br>
+        <%= @user.description %>
+      </section>
+    <% end %>
   </aside>
   <div class="col-md-8">
     <% if @user.posts.any? %>
